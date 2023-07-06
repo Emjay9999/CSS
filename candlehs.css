@@ -1,0 +1,135 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+header{
+	background-image: url("candle 6.jpg");
+	background-position: center;
+	height: 400px;
+	position: relative
+}
+body{
+	background-color: #1f1d36;
+}
+.nav:before,.nav:after{
+	content: " ";
+	display: table;
+}
+.nav:after {
+	clear: both;
+}
+.nav {
+	*zoom: 1;
+}
+nav {
+	padding: 10px;
+	margin-left: 60%;
+}
+.menu,.submenu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.menu {
+	margin: 30px auto;
+	width: 800px;
+	width: -moz-fit-content;
+	width: -webkit-fit-content;
+	width: fit-content;
+}
+.menu > li {
+	background: #000;
+	float: left;
+	position: relative;
+	transform: skewX(25deg);
+}
+.menu a {
+	display: block;
+	color: fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 14px;
+}
+.menu li:hover {
+	background: #ab00ff;
+}
+.menu > li > a {
+	transform: skewX(-25deg);
+	padding: 1em 2em;
+	text-decoration: none;
+	color: white;
+}
+.dropmenu {
+	position: absolute;
+	width: 200px;
+	left: 50%; margin-left: -100px;
+	transform: skewX(-25deg);
+	transform-origin: left top;
+}
+.dropmenu li{
+	background-color: #34495e;
+	position: relative;
+	overflow: hidden;
+	
+}
+.dropmenu > li > a {
+	padding: 1em 2em;
+	text-decoration: none;
+	color: white;
+}
+.dropmenu > li::after {
+	content: '';
+	position: absolute;
+	top: -125%;
+	height: 100%;
+	width: 100%;
+	box-shadow: 0 0 50px rgba(0, 0, 0, .9);
+}
+.dropmenu > li:nth-child(odd){
+	transform: skewX(-25deg) translateX(0);
+}
+.dropmenu > li:nth-child(odd) > a{
+	transform: skewX(25deg);
+}
+.dropmenu > li:nth-child(odd)::after {
+	right: -50%;
+	transform: skewX(-25deg) rotate(3deg);
+}
+.dropmenu > li:nth-child(even){
+	transform: skewX(25deg) translateX(0);
+}
+.dropmenu > li:nth-child(even) > a{
+	transform: skewX(-25deg);
+}
+.dropmenu > li:nth-child(even)::after {
+	right: -50%;
+	transform: skewX(25deg) rotate(3deg);
+}
+.dropmenu,.dropmenu li {
+	opacity: 0;
+	visibility: hidden;
+}
+.dropmenu li {
+	transition: .8s ease transform;
+}
+.menu > li:hover .dropmenu, 
+.menu > li:hover .dropmenu li {
+	opacity: 1;
+	visibility: visible;
+}
+.menu > li:hover .dropmenu li:nth-child(even){
+	transform: skewX(25deg) translateX(15px);
+}
+.menu > li:hover .dropmenu li:nth-child(odd){
+	transform: skewX(-25deg) translateX(-15px);
+}
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+	font-size: 60px;
+	font-weight: bold;
+	color: #ffefcb;
+}
